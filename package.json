@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev --host --port 3000",
+		"dev": "vite dev --port 3000",
 		"build": "vite build",
 		"preview": "vite preview",
 		"test": "playwright test",
@@ -42,5 +42,8 @@
 		"vitest": "^0.25.3"
 	},
 	"type": "module",
-	"dependencies": {}
+	"dependencies": {
+		"@rgossiaux/svelte-headlessui": "^1.0.2",
+		"@tailwindcss/aspect-ratio": "^0.4.2"
+	}
 }
