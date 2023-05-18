@@ -20,15 +20,25 @@
 						class="text-gray-400 hover:scale-105 transition top-1 right-1 absolute hidden group-hover:block group-hover:opacity-100  z-10"
 					/>
 					<div
-						class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md p-3 bg-white shadow-md border-1 border-gray-50 lg:aspect-none group-hover:opacity-80 lg:h-80 transition duration-200"
+						class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md relative p-3 bg-white shadow-md border-1 border-gray-50 lg:aspect-none group-hover:opacity-80 lg:h-80 transition duration-200"
 					>
 						<img
 							src={variant.image.src}
 							alt="lkjl"
 							class="h-full w-full object-cover object-center lg:h-full lg:w-full"
 						/>
+						<div class="flex gap-1 flex-wrap absolute bottom-3 left-0 w-full justify-center">
+							{#each variant.colors as colorObject}
+								{#if colorObject.colors}
+									<div
+										style={`background-color: ${colorObject.colors[0]};`}
+										class={`mt-1 text-sm text-gray-500 h-3 w-3 rounded-full`}
+									/>
+								{/if}
+							{/each}
+						</div>
 					</div>
-					<div class="mt-4 flex justify-between">
+					<div class="mt-4 flex justify-between px-3">
 						<div>
 							<h3 class="text-sm text-gray-700">
 								<a href="#">
@@ -36,14 +46,6 @@
 									{variant.title}
 								</a>
 							</h3>
-							{#each variant.colors as color}
-								{#if color.colors !== undefined}
-									<span
-										style={`background-color: ${color.colors[0]};`}
-										class={`mt-1 text-sm text-gray-500 h-3 w-3 rounded-full`}
-									/>
-								{/if}
-							{/each}
 						</div>
 						<p class="text-sm font-medium text-gray-900">$35</p>
 					</div>
