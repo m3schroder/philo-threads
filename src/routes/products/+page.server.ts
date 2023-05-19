@@ -1,5 +1,5 @@
 import printify from "@lib/printify";
-import type { PageServerLoad } from '../../$types'
+import type { PageServerLoad } from '../$types'
 import { PRINTIFY_TOKEN } from "$env/static/private";
 
 export const load: PageServerLoad = async ({ fetch }) => {

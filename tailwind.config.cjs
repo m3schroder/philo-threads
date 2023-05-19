@@ -8,7 +8,9 @@ const config = {
 		"./src/components/**/*.{html,js,svelte,ts}"
 	],
 	safelist: [
-
+		'rotate-12',
+		'translate-x-12',
+		'translate-y-12',
 	],
 	theme: {
 		extend: {
