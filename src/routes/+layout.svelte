@@ -39,30 +39,32 @@
 	</div>
 	<!-- Content -->
 	<div class="p-3 basis-full overflow-x-clip md:overflow-x-visible relative" id="page-wrapper">
-		<Transition
-			show={open}
-			appear={true}
-			enter="transition ease-out duration-200"
-			enterFrom="opacity-0"
-			enterTo="opacity-100"
-			leave="transition ease-in duration-150"
-			leaveFrom="opacity-100"
-			leaveTo="opacity-0"
-		>
-			<div class="w-32 h-fit absolute top-12 left-8 flex flex-col gap-3">
-				{#each ['Products', 'About', 'Contact'] as item}
-					<a
-						href={`/${item.toLowerCase()}`}
-						class="font-serif text-xl hover:bg-forest-accent w-72 font-semibold px-5 py-2 text-white rounded-xl"
-						>{item}</a
-					>
-				{/each}
-			</div>
-		</Transition>
+		{#if open}
+			<Transition
+				show={open}
+				appear={true}
+				enter="transition ease-out duration-500"
+				enterFrom="opacity-0"
+				enterTo="opacity-100"
+				leave="transition ease-in duration-500"
+				leaveFrom="opacity-100"
+				leaveTo="opacity-0"
+			>
+				<div class="w-32 h-fit absolute top-12 left-8 flex flex-col gap-3">
+					{#each ['Products', 'About', 'Contact'] as item}
+						<a
+							href={`/${item.toLowerCase()}`}
+							class="font-serif text-xl hover:bg-forest-accent w-72 font-semibold px-5 py-2 text-white rounded-xl"
+							>{item}</a
+						>
+					{/each}
+				</div>
+			</Transition>
+		{/if}
 		<div
 			class={classNames(
-				'bg-white border-1 border-forest-accent w-full  duration-500 transition-all overflow-auto grow rounded-[50px]',
-				open ? 'rotate-6 translate-x-32 translate-y-6' : ''
+				open ? 'rotate-6 translate-x-32 translate-y-6' : '',
+				'bg-white border-1 border-forest-accent w-full  duration-500 transition-all overflow-auto grow rounded-[50px]'
 			)}
 		>
 			<slot />
